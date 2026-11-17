@@ -1,0 +1,8 @@
+# Local build output / editor state
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+build/
+.vex/
+*.log

@@ -1,0 +1,2 @@
+# The native worlds-era Fusion assembly exceeds GitHub's normal 100 MiB blob limit.
+cad/*.f3z filter=lfs diff=lfs merge=lfs -text
