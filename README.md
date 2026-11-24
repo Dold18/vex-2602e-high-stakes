@@ -2,7 +2,7 @@
 
 **Hopkinetics Entropy · Hopkinton High School · 2024–2025 VEX V5 Robotics Competition**
 
-A competition robotics project encompassing mechanical design, autonomous-motion development, sensing, drivetrain engineering, iterative prototyping, match strategy, and field-tested systems integration. This repository preserves Team 2602E's original engineering notebook, worlds-era Fusion 360 robot assembly, physical robot photographs, and selected autonomous-path demonstration videos. **The original C++ project will be added when recovered.**
+A competition robotics project encompassing mechanical design, autonomous-motion development, sensing, drivetrain engineering, iterative prototyping, match strategy, and field-tested systems integration. This repository preserves Team 2602E's original engineering notebook, worlds-era Fusion 360 robot assembly, physical robot photographs, and selected autonomous-path demonstration videos. **The original VEXcode C++ project has now been recovered and is available under [`code/ragar/`](code/ragar/).**
 
 ![Team 2602E High Stakes VEX V5 robot alongside competition field stake](media/photos/robot-on-field.jpeg)
 
@@ -39,7 +39,7 @@ The machine evolved through substantial design iteration, including a mechanical
 | Autonomous motion | Path planning, PID control, pure-pursuit concepts, odometry analysis and tuning investigations |
 | Integration | CAD-driven geometry, V5 hardware, electrical packaging, field constraints and competition strategy |
 
-The notebook discusses control algorithms and candidate designs. It is **not proof that every described algorithm or prototype mechanism appeared in the final robot firmware**; the actual code remains pending publication.
+The notebook discusses control algorithms and candidate designs. It is **not proof that every described algorithm or prototype mechanism appeared in the final robot firmware**; the recovered code is a historical project snapshot, not an independently verified record of the exact firmware deployed in every competition.
 
 ## Editable CAD assembly
 
@@ -76,7 +76,7 @@ The [engineering notebook](docs/2602e-high-stakes-engineering-notebook.pdf) cont
 - Algorithm analysis and tuning experiments, including particle swarm optimization.
 - Reliability considerations, logging, hardware temperature management and motion recovery.
 
-The repository currently has a **tracked but code-free [`code/` directory](code/)**. The original VEX C++ project will be added later, without changing the CAD, footage, or engineering documentation.
+The recovered original VEXcode source tree is available at **[`code/ragar/`](code/ragar/)**, including the project configuration, original `src/` and `include/` directories, autonomous routines, and drivetrain/control experiments. See the [source archive notes](code/README.md) for provenance, third-party components, and reproduction limitations.
 
 ![Example of the original autonomous path planning documentation](media/engineering-notebook/autonomous-path-plan.jpg)
 
@@ -99,7 +99,7 @@ The notebook is an original team document, not a retrospective reconstruction. S
 ```text
 2602e-high-stakes/
 ├── cad/                 Native Fusion 360 worlds-era assembly (Git LFS)
-├── code/                Placeholder for original VEX C++ project (pending)
+├── code/ragar/          Recovered original VEXcode C++ project (68 source/config files)
 ├── competition/         Season records and awards
 ├── docs/                Complete 371-page engineering notebook
 └── media/
