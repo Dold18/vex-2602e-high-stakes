@@ -1,0 +1,36 @@
+name: Import recovered VEX source
+on:
+  push:
+    branches:
+      - feature/recover-ragar-vex-source
+    paths:
+      - code/.import/part06.b64
+
+permissions:
+  contents: write
+
+jobs:
+  extract-recovered-code:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify and unpack archived team source
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat code/.import/part*.b64 | base64 --decode > /tmp/rar-source.tar.xz
+          echo "120acd1a104db1170ca195dbf325dfc4602370b37fa0bb97b78af9f1e89ddc3f  /tmp/rar-source.tar.xz" | sha256sum --check
+          mkdir -p code/ragar
+          tar -xJf /tmp/rar-source.tar.xz -C code/ragar
+          test "$(find code/ragar -type f | wc -l)" -eq 68
+          rm -rf code/.import
+      - name: Commit recovered source files
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A code
+          git commit -m "Restore original VEXcode C++ project from archived ragar source"
+          git push origin HEAD:feature/recover-ragar-vex-source
